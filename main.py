@@ -15,18 +15,194 @@ section = st.sidebar.radio(
         "🧪 Models Experimentation",
         "🎯 Hyperparameter Tuning",
         "🤖 Final Model & Metrics",
+        "🛰️ API Service (FastAPI)",
+        "🌥️ AWS Deployment (Auto Scaling)",
+        "🔥 Stress Testing (Postman)",
         "🔮 DVC Pipeline, CI/CD Automation",
-        "🧱 Tech Stack & Pipeline"
+        "🧱 Tech Stack & Pipeline",
+        "🔗 Project Repositories & Author"
     ]
 )
+
 
 # ============================================================
 # SECTION FUNCTIONS
 # ============================================================
 
 def section_overview():
+
     st.title("🏠 Project Overview")
-    st.write("Add your project intro here...")
+
+    # ============================================================
+    # ⭐ WHAT THIS PROJECT IS (HIGHLIGHT CARD)
+    # ============================================================
+    st.markdown(
+        """
+        <div style="
+            background-color:#eaf3ff;
+            padding:25px;
+            border-radius:16px;
+            border:1px solid #c7dcff;
+            box-shadow:0 3px 10px rgba(0,0,0,0.08);
+            margin-top:15px;
+        ">
+        <h2 style="color:#083b6e; margin-bottom:12px;">🚀 ETAFlow — Scalable Delivery Time Prediction System</h2>
+
+        <p style="color:#222; font-size:17px; line-height:1.7;">
+        This project delivers a <b>full production-grade Delivery Time Estimation system</b> 
+        similar to Swiggy, Zomato, and Uber Eats.  
+        It combines <b>Machine Learning, MLOps, Cloud Engineering, CI/CD, Docker, FastAPI,
+        AWS Auto Scaling, and real-time monitoring</b> into a single unified pipeline.
+        </p>
+
+        <p style="color:#222; font-size:17px; line-height:1.7;">
+        The entire workflow — from data cleaning ➝ model training ➝ MLflow registry ➝ 
+        FastAPI service ➝ Docker deployment ➝ automatic scaling — is fully automated 
+        and designed for <b>real-world production environments</b>.
+        </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # ============================================================
+    # 🌟 WHAT THE PROJECT DOES
+    # ============================================================
+    st.markdown("## 🌟 What This Project Does")
+
+    st.write(
+        """
+        This system predicts **expected delivery time (ETA)** using a powerful weighted 
+        ensemble model (LightGBM + CatBoost).  
+        It ensures:
+        
+        - High accuracy  
+        - Real-time response  
+        - Auto-scaling under heavy traffic  
+        - Fully automated CI/CD deployment  
+        - Zero downtime updates  
+        - Cloud monitoring and observability  
+        """
+    )
+
+    # ============================================================
+    # 🎯 PROJECT GOALS (CARD)
+    # ============================================================
+    st.markdown(
+        """
+        <div style="
+            background-color:#fff7e6;
+            padding:25px;
+            border-radius:16px;
+            border:1px solid #f5d5a4;
+            box-shadow:0 3px 10px rgba(0,0,0,0.08);
+            margin-top:25px;
+        ">
+        <h2 style="color:#8a4b00; margin-bottom:15px;">🎯 Project Goals</h2>
+
+        <p style="color:#222; font-size:17px; line-height:1.7;">
+        The goal was to build a <b>fast, scalable, and cloud-ready ETA prediction pipeline</b> 
+        that supports real production constraints:
+        </p>
+
+        <ul style="color:#222; font-size:16px; line-height:1.65;">
+            <li>Deliver ETA predictions in <b>milliseconds</b></li>
+            <li>Automatically scale during peak loads (validated with a 100k-request stress test)</li>
+            <li>Deploy seamlessly using <b>Auto Scaling Groups + Launch Templates</b></li>
+            <li>Continuously integrate and deploy using <b>GitHub Actions CI/CD</b></li>
+            <li>Track every experiment and model using <b>MLflow</b></li>
+            <li>Make the entire ML pipeline reproducible using <b>DVC</b></li>
+        </ul>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # ============================================================
+    # 🔧 KEY COMPONENTS OF THE SYSTEM
+    # ============================================================
+    st.markdown("## 🔧 Key Components of the System")
+
+    st.write(
+        """
+        This project is not just a machine learning model —  
+        it is a **complete engineering ecosystem**, including:
+
+        ### 🔹 Data Engineering  
+        - Heavy EDA  
+        - Fixing corrupted coordinates  
+        - Feature engineering  
+        - Outlier handling  
+        - Missing value strategy (drop vs impute)
+
+        ### 🔹 Machine Learning  
+        - Advanced experimentation  
+        - Hyperparameter tuning (Optuna)  
+        - Weighted ensemble model  
+        - MLflow model registry  
+
+        ### 🔹 Deployment  
+        - FastAPI as the inference server  
+        - Docker containerization  
+        - Amazon ECR image storage  
+        - EC2 Auto Scaling deployment  
+
+        ### 🔹 MLOps & Cloud  
+        - GitHub Actions CI/CD  
+        - Instance Refresh (zero-downtime updates)  
+        - CloudWatch real-time metrics  
+        - Auto Scaling based on CPU  
+        """
+    )
+
+    # ============================================================
+    # 🏆 KEY OUTCOMES (HIGHLIGHT CARD)
+    # ============================================================
+    st.markdown(
+        """
+        <div style="
+            background-color:#e8fff3;
+            padding:25px;
+            border-radius:16px;
+            border:1px solid #b9ecd5;
+            box-shadow:0 3px 10px rgba(0,0,0,0.08);
+            margin-top:25px;
+        ">
+        <h2 style="color:#106644; margin-bottom:10px;">🏆 Key Outcomes</h2>
+
+        <ul style="color:#0d422f; font-size:17px; line-height:1.7;">
+            <li>Achieved a strong performance: <b>MAE ≈ 3.01</b> and <b>R² ≈ 0.84</b></li>
+            <li>Total traffic generated: 100,000 API requests</li>
+            <li>Auto Scaling increased EC2s from <b>1 → 2 → 3</b> automatically</li>
+            <li>Zero downtime during new deployment using Instance Refresh</li>
+            <li>Fully automated ML + Deployment pipeline with CI/CD + DVC</li>
+            <li>Production-grade FastAPI service running via Docker</li>
+        </ul>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # ============================================================
+    # 📝 SUMMARY TEXT
+    # ============================================================
+    st.markdown("## 📝 Final Summary")
+
+    st.write(
+        """
+        This project demonstrates how a modern tech company would build a 
+        **scalable, reliable, fully-automated ML system** for real-time delivery predictions.
+
+        It combines:
+        - ML engineering  
+        - Cloud deployment  
+        - Infrastructure automation  
+        - Reproducible pipelines  
+        - Monitoring and stress testing  
+
+        making it a complete **MLOps portfolio-grade project**.
+        """
+    )
 
 
 # 🌟 COMBINED DATASET + EDA SECTION (BEAUTIFIED)
@@ -83,7 +259,7 @@ def section_dataset_eda():
     # 🧩 MISSING VALUE & CORRELATION HEATMAPS
     # ======================================================
     st.markdown("---")
-    st.subheader("🖼 Missing Values & Correlation Heatmap (Side by Side)")
+    st.subheader("🖼 Missing Values & Correlation Heatmap")
 
     from PIL import Image
 
@@ -625,24 +801,24 @@ def section_final_model():
 
 
 def section_predict():
+
     st.title("⚙️ DVC Pipeline, CI/CD Automation & Model Workflow")
+
+    st.write("""
+    This section covers how the project uses **DVC** for pipeline automation  
+    and **GitHub Actions + AWS** for CI/CD and model verification.
+    """)
+
     # =====================================================
     # 📦 DVC PIPELINE
     # =====================================================
     st.markdown("---")
-    st.header("📦 DVC Pipeline: End-to-End ML Workflow")
+    st.header("📦 DVC Pipeline (End-to-End Workflow)")
 
-    st.markdown(
-        """
-        <div style="padding:15px; background-color:white; border:1px solid #ccc; 
-        border-radius:8px; color:black;">
-            The machine learning pipeline—from raw Swiggy data to final model 
-            registration—is automated using <b>DVC</b>. 
-            Each stage ensures reproducibility, versioning, and traceability.
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.write("""
+    The full ML workflow—from raw data to final model—is tracked through DVC.
+    Below is the pipeline structure:
+    """)
 
     st.code(
         """stages:
@@ -706,39 +882,52 @@ def section_predict():
       - data/processed/test_trans.csv
       - params.yaml
     outs: []
-        """,
-        language="yaml"
+""",
+        language="yaml",
     )
+    # ------------------------------
+    # 📌 WHAT EACH STAGE DOES (CARD)
+    # ------------------------------
 
-    st.markdown(
-        """
-        <div style="padding:15px; background-color:white; border:1px solid #ccc; 
-        border-radius:8px; color:black;">
-            <b>Key DVC Behaviors:</b><br>
-            • Data and models are version-controlled<br>
-            • Each stage runs only when dependencies change<br>
-            • Enables fully reproducible experimentation<br>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown("""
+    <div style="
+        background-color:#e8fff3; 
+        padding:14px 22px;
+        display:inline-block;
+        border-radius:10px;
+        border:1px solid #b8e6cf;
+        box-shadow:0 2px 4px rgba(0,0,0,0.06);
+        margin-top:20px;
+        margin-bottom:10px;
+    ">
+        <h3 style="color:#124d35; margin:0; font-size:20px;">
+            📌 What Each Stage Does
+        </h3>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    - **clean_data** → Cleans raw Swiggy data and removes errors.  
+    - **split_data** → Creates reliable train/test datasets for experimentation.  
+    - **preprocess** → Builds full transformation pipeline (encoding + scaling) and stores it.  
+    - **train** → Trains both LightGBM and CatBoost models.  
+    - **evaluate** → Validates the models using unseen test data.  
+    - **register_model** → Registers the best-performing model for deployment.  
+    """)
+
+
+
 
     # =====================================================
     # 🚀 CI/CD PIPELINE
     # =====================================================
     st.markdown("---")
-    st.header("🚀 CI/CD Automation: GitHub Actions + AWS")
+    st.header("🚀 CI/CD Pipeline (GitHub Actions + AWS)")
 
-    st.markdown(
-        """
-        <div style="padding:15px; background-color:white; border:1px solid #ccc; 
-        border-radius:8px; color:black;">
-            The CI/CD pipeline automates testing, model validation, containerization, 
-            and prepares the application for deployment.
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.write("""
+    The CI/CD pipeline automatically tests models, validates performance,  
+    and packages the final model into a deployable Docker image.
+    """)
 
     st.code(
         """name: CI-CD
@@ -756,107 +945,875 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
 
       - name: Install Dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install -r requirement_action.txt
 
-      - name: Configure AWS Credentials (for DVC)
+      - name: Configure AWS for DVC
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1
 
-      - name: DVC Pull from S3 Bucket
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          dvc pull
+      - name: DVC Pull
+        run: dvc pull
 
       - name: Test Model Loading
-        env:
-          MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
-        run: |
-          pytest tests/test_model_loading.py -q
+        run: pytest tests/test_model_loading.py -q
 
       - name: Test Model Performance
-        env:
-          MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
-        run: |
-          pytest tests/test_performance.py -q
+        run: pytest tests/test_performance.py -q
 
-      - name: Configure AWS Credentials for ECR
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_B }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_B }}
-          aws-region: eu-north-1
-
-      - name: Login to Amazon ECR
-        id: login-ecr
+      - name: Login to ECR
         uses: aws-actions/amazon-ecr-login@v2
 
-      - name: Build, tag, and push docker image to Amazon ECR
-        env:
-          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: delivery-time-estimator
-          IMAGE_TAG: latest
+      - name: Build & Push Docker Image
         run: |
-          docker build -t $REPOSITORY .
-          docker tag $REPOSITORY:latest $REGISTRY/$REPOSITORY:$IMAGE_TAG
-          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker build -t delivery-time-estimator .
+          docker tag delivery-time-estimator:latest ${{ steps.login-ecr.outputs.registry }}/delivery-time-estimator:latest
+          docker push ${{ steps.login-ecr.outputs.registry }}/delivery-time-estimator:latest
 
-      - name: Refresh EC2 Auto Scaling Group
+      - name: Refresh Auto Scaling Group
         run: |
           aws autoscaling start-instance-refresh \
             --auto-scaling-group-name delivery-asg \
             --region eu-north-1 \
             --preferences MinHealthyPercentage=100
+""",
+        language="yaml",
+    )
+
+    # ------------------------------------------
+    # 🧪 CI/CD TESTS PERFORMED (BEAUTIFUL CARD)
+    # ------------------------------------------
+    st.markdown("""
+    <div style="
+        background-color:#e8fff3; 
+        padding:14px 22px;
+        display:inline-block;
+        border-radius:10px;
+        border:1px solid #b8e6cf;
+        box-shadow:0 2px 4px rgba(0,0,0,0.06);
+        margin-top:20px;
+        margin-bottom:10px;
+    ">
+        <h3 style="color:#124d35; margin:0; font-size:20px;">
+            🧪 CI/CD — Tests Performed Automatically
+        </h3>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+
+
+    # ------------------  CI/CD Steps  ------------------
+    st.markdown("""
+    ### 🔄 Automated CI/CD Steps  
+    - **Checkout Code** → Pulls your repository to the CI runner.  
+    - **Install Dependencies** → Sets up Python + required packages.  
+    - **DVC Pull** → Downloads latest data & artifacts from the S3 remote.  
+        ### ✅ Automated Tests
+        - **Model Loading Test** → Ensures the latest MLflow model loads without any errors.  
+        - **Model Performance Test** → Validates that MAE/RMSE stay above the defined threshold before deployment.    
+    - **Build Docker Image** → Packages the updated API + model.  
+    - **Push Image to ECR** → Uploads the new version to AWS Elastic Container Registry.  
+    - **Refresh Auto Scaling Group** → Deploys updated image to all EC2 instances automatically.  
+    """)
+
+def section_fastapi():
+
+    st.title("🛰️ FastAPI Service — Real-Time ETA Prediction")
+
+    st.write(
+        """
+        This section describes how the production-grade **FastAPI** service is built to deliver
+        real-time Swiggy delivery time predictions using:
+
+        - 🚀 MLflow Model Registry  
+        - 🧠 Weighted Ensemble (LightGBM + CatBoost)  
+        - 🧹 Automated Input Cleaning  
+        - 🔧 Saved Preprocessing Pipeline  
+        """
+    )
+
+    # =============================
+    # API ARCHITECTURE CARD
+    # =============================
+    st.markdown(
+        """
+    <div style="
+    background-color:#eaf3ff;
+    padding:24px;
+    border-radius:16px;
+    border:1px solid #c6dcff;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    margin-top:16px;
+    ">
+
+    <h3 style="color:#0a2c4d; margin-bottom:12px;">📦 How the API Works</h3>
+
+    <p style="color:#000; line-height:1.55;">
+        The FastAPI backend loads the <b>latest registered model</b> from MLflow, including:
+    </p>
+
+    <ul style="color:#000; line-height:1.6; padding-left:20px;">
+        <li>Saved <b>preprocessor</b></li>
+        <li><b>CatBoost</b> model</li>
+        <li><b>LightGBM</b> model</li>
+        <li>Blending weights (LightGBM = 0.60, CatBoost = 0.40)</li>
+    </ul>
+
+    <p style="color:#000; line-height:1.55; margin-top:12px;">
+        For every request, the backend performs:
+    </p>
+
+    <ul style="color:#000; line-height:1.6; padding-left:20px;">
+        <li>Raw JSON is cleaned via <b>perform_data_cleaning()</b></li>
+        <li>Features transformed using the stored <b>preprocessor</b></li>
+        <li>Both models generate predictions</li>
+        <li>Final ETA = <b>weighted average</b> of the two outputs</li>
+    </ul>
+
+    </div>
+    """,
+        unsafe_allow_html=True,
+    )
+
+
+    st.markdown("### 🧠 API Startup — Load Latest MLflow Model")
+
+    st.code(
+        """
+mlflow.set_tracking_uri(TRACKING_URI)
+client = MlflowClient()
+
+MODEL_NAME = "Swiggy-Ensemble-Model"
+
+latest_ver = client.get_latest_versions(MODEL_NAME, stages=None)[0].version
+model_uri = f"models:/{MODEL_NAME}/{latest_ver}"
+
+model_bundle = mlflow.sklearn.load_model(model_uri)
+
+preprocessor = model_bundle["preprocessor"]
+cat_model = model_bundle["catboost"]
+lgb_model = model_bundle["lightgbm"]
+w_cat = model_bundle["weights"]["cat"]
+w_lgb = model_bundle["weights"]["lgbm"]
         """,
-        language="yaml"
+        language="python",
     )
 
     st.markdown(
         """
-        <div style="padding:15px; background-color:white; border:1px solid #ccc; 
-        border-radius:8px; color:black;">
-            <b>What CI/CD Ensures:</b><br>
-            • Ensures latest data & MLflow model artifacts are synced<br>
-            • Validates model loading + performance automatically<br>
-            • Builds and pushes Docker image for serving<br>
-        </div>
-        """,
-        unsafe_allow_html=True
+        ✅ Always uses the **latest registered model**  
+        ✅ No manual redeployment of model files  
+        ✅ CI/CD only updates the MLflow Registry entry  
+        """
     )
 
-    # =====================================================
-    # 🌐 FINAL SECTION
-    # =====================================================
-    st.markdown("---")
-    st.header("🌐 Model Serving Integration")
+    st.markdown("### 📥 Request Body Schema")
+
+    st.code(
+        """
+class InputData(BaseModel):
+    ID: str
+    Delivery_person_ID: str
+    Delivery_person_Age: float
+    Delivery_person_Ratings: float
+    Restaurant_latitude: float
+    Restaurant_longitude: float
+    Delivery_location_latitude: float
+    Delivery_location_longitude: float
+    Order_Date: str
+    Time_Orderd: str
+    Time_Order_picked: str
+    Weatherconditions: str
+    Road_traffic_density: str
+    Vehicle_condition: int
+    Type_of_order: str
+    Type_of_vehicle: str
+    multiple_deliveries: float
+    Festival: str
+    City: str
+        """,
+        language="python",
+    )
 
     st.markdown(
-        """
-        <div style="padding:15px; background-color:white; border:1px solid #ccc; 
-        border-radius:8px; color:black;">
-            The final <b>Weighted Ensemble Model (LightGBM + CatBoost)</b> is packaged inside a Docker
-            container and made available through an API endpoint.  
-            The Streamlit UI (this app) connects to that API to return the predicted delivery time.
-        </div>
-        """,
-        unsafe_allow_html=True
+        "This Pydantic model ensures that every request is validated **before** it hits the model."
     )
+
+    st.markdown("### 🔄 Prediction Flow")
+
+    st.code(
+        """
+@app.post("/predict")
+def predict(data: InputData):
+    raw_df = pd.DataFrame([data.dict()])
+
+    cleaned_df = perform_data_cleaning(raw_df)
+    if cleaned_df.empty:
+        return {"error": "Input cleaning removed the row (invalid values)."}
+
+    X = preprocessor.transform(cleaned_df)
+
+    pred_cat = cat_model.predict(X)
+    pred_lgb = lgb_model.predict(X)
+
+    final_pred = float((w_cat * pred_cat) + (w_lgb * pred_lgb))
+
+    return {
+        "predicted_time_minutes": final_pred,
+        "model_version_used": latest_ver,
+        "weights": {"catboost": w_cat, "lightgbm": w_lgb}
+    }
+        """,
+        language="python",
+    )
+
+    st.success(
+        "The API returns predictions in **milliseconds**, making it ideal for real-time ETA estimation."
+    )
+
+    st.markdown("### ▶️ Running the API Locally")
+
+    st.code("uvicorn app:app --host 0.0.0.0 --port 8000 --reload", language="bash")
+
+    st.info("Open **http://localhost:8000/docs** for Swagger UI testing.")
+
+    # =============================
+    # FASTAPI VS FLASK CARD
+    # =============================
+    st.markdown(
+    """
+    <div style="
+    background-color:#fff5e8;
+    padding:22px 26px;
+    border-radius:16px;
+    border:1px solid #f7cfa2;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    margin-top:28px;
+    max-width:850px;
+    ">
+
+    <h3 style="color:#8a4b00; margin-bottom:12px;">
+    ⚡ Why I Used FastAPI Instead of Flask
+    </h3>
+
+    <p style="color:#222; font-size:16px; line-height:1.55;">
+    FastAPI was selected because it provides 
+    <b>high performance, strict validation, async support,</b>
+    and a cleaner development experience.
+    </p>
+
+    <ul style="color:#222; font-size:15px; line-height:1.6;">
+    <li><b>🚀 Faster</b> — ASGI + Uvicorn. Perfect for ML inference.</li>
+    <li><b>📘 Auto Docs</b> — Swagger UI + Redoc instantly available.</li>
+    <li><b>🛡 Pydantic</b> — Strong, strict validation.</li>
+    <li><b>⚙ Async</b> — Handles high traffic better than Flask.</li>
+    <li><b>🧰 DevOps Friendly</b> — Great with Docker & CI/CD.</li>
+    <li><b>💡 Cleaner Codebase</b> — Less boilerplate.</li>
+    </ul>
+
+    <p style="color:#222; font-size:15px; margin-top:10px;">
+    For real-time predictions needing <b>speed, reliability, scalability</b>,
+    FastAPI was the superior choice.
+    </p>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
+
+
+
+
+
+def section_aws_deploy():
+
+    st.title("🌥️ AWS Deployment — Auto Scaling, Load Balancer & Docker")
+
+    st.write(
+        """
+        This section explains how my backend is deployed on AWS using 
+        **Auto Scaling Group (ASG)**, **Application Load Balancer (ALB)**, 
+        **Launch Templates**, and **Docker running on EC2**.
+        """
+    )
+
+    # =============================
+    # IMPORTANT CARD — High-Level Architecture
+    # =============================
+    st.markdown(
+"""
+<div style="
+background-color:#eaf3ff;
+padding:22px;
+border-radius:14px;
+border:1px solid #bfd8ff;
+box-shadow:0 2px 8px rgba(0,0,0,0.06);
+margin-top:16px;
+">
+
+<h3 style="color:#083b6e; margin-bottom:10px;">📦 Deployment Architecture Overview</h3>
+
+<p style="color:#111; line-height:1.55;">
+My deployment pipeline is fully automated using AWS infrastructure:
+</p>
+
+<ul style="color:#111; line-height:1.55; margin-left:12px;">
+    <li><b>Auto Scaling Group (ASG)</b> manages EC2 creation and termination</li>
+    <li><b>Application Load Balancer (ALB)</b> routes traffic only to healthy instances</li>
+    <li><b>Launch Template + User Data</b> runs Docker and starts FastAPI automatically</li>
+    <li><b>ECR</b> stores Docker images generated by CI/CD</li>
+</ul>
+
+</div>
+""",
+        unsafe_allow_html=True,
+    )
+
+    # =============================
+    # NORMAL SECTION — ASG
+    # =============================
+    st.subheader("1️⃣ Auto Scaling Group (ASG)")
+    st.write(
+        """
+        The Auto Scaling Group handles all backend deployment automatically:
+
+        - Launches EC2 instances based on the Launch Template  
+        - Ensures desired capacity  
+        - Replaces instances during **Instance Refresh**  
+        - Scales out when CPU increases  
+        - Scales in to reduce cost  
+        """
+    )
+
+    # =============================
+    # NORMAL SECTION — ALB
+    # =============================
+    st.subheader("2️⃣ Application Load Balancer (ALB)")
+    st.write(
+        """
+        All API traffic goes through the ALB, not directly to EC2.
+
+        ALB responsibilities:
+        - Distribute traffic across EC2 instances  
+        - Perform health checks (`/docs`)  
+        - Remove unhealthy instances  
+        - Support zero-downtime rolling deployments  
+        """
+    )
+
+    # =============================
+    # IMPORTANT CARD — User Data Automation
+    # =============================
+    st.markdown(
+"""
+<div style="
+background-color:#fff8e8;
+padding:22px;
+border-radius:14px;
+border:1px solid #fde3b0;
+box-shadow:0 2px 8px rgba(0,0,0,0.06);
+margin-top:20px;
+">
+
+<h3 style="color:#8a4b00; margin-bottom:10px;">⚙️ Automatic EC2 Deployment (User Data Script)</h3>
+
+<p style="color:#222; line-height:1.55;">
+Every new EC2 instance automatically installs and runs the API using User Data:
+</p>
+
+<ul style="color:#222; line-height:1.55; margin-left:12px;">
+    <li>Installs Docker + AWS CLI</li>
+    <li>Fetches secrets from SSM</li>
+    <li>Logs into ECR</li>
+    <li>Pulls the latest Docker image</li>
+    <li>Runs the FastAPI server on port <b>8000</b></li>
+</ul>
+
+<p style="color:#222; line-height:1.55;">
+No manual deployment steps are required.
+</p>
+
+</div>
+""",
+        unsafe_allow_html=True,
+    )
+
+    # =============================
+    # NORMAL SECTION — Updating to New Version
+    # =============================
+    st.subheader("3️⃣ How New Versions Are Deployed (Zero Downtime)")
+    st.write(
+        """
+        When I push new code:
+
+        1. CI/CD builds a new Docker image  
+        2. Pushes it to Amazon ECR  
+        3. I trigger **Instance Refresh** in ASG  
+
+        ASG then:
+        - Terminates one old EC2  
+        - Launches a new EC2  
+        - New instance pulls latest Docker image  
+        - ALB waits until it's healthy  
+        - Moves to next instance  
+
+        → **Zero downtime deployment**  
+        """
+    )
+
+    # =============================
+    # NORMAL SECTION — Auto Scaling Behavior
+    # =============================
+    st.subheader("4️⃣ Auto Scaling During High Load")
+    st.write(
+        """
+        When CPU usage rises during stress tests:
+
+        - ASG automatically launches additional EC2 instances  
+        - User Data deploys the API instantly  
+        - ALB begins routing traffic to them  
+
+        When traffic decreases — ASG terminates extra instances → **cost savings**.
+        """
+    )
+
+    # =============================
+    # NORMAL SECTION — Summary
+    # =============================
+    st.subheader("📝 Final Summary")
+    st.code(
+"""
+Git Push → CI/CD builds Docker image → pushes to ECR
+→ Instance Refresh triggered
+→ ASG launches new EC2
+→ User Data deploys Docker container
+→ ALB routes traffic only to healthy instances
+→ New version goes live with zero downtime
+""",
+        language="text",
+    )
+    st.title("🗺️ Deployment Architecture Diagram")
+
+    st.write(
+        """
+        This diagram shows the complete production workflow for the Delivery Time Estimator.
+        It illustrates how code moves from **GitHub → CI/CD → ECR → ASG → EC2 → ALB → Users**.
+        """
+    )
+
+    ascii_diagram = """
++---------------------------+
+|        GitHub Repo        |
++-------------+-------------+
+              | Push Code
+              v
++---------------------------+
+|     GitHub Actions CI     |
+|  - Build Docker Image     |
+|  - Run Tests              |
+|  - Push to ECR            |
++-------------+-------------+
+              |
+              | Docker Image
+              v
++-------------------------------------------+
+|        Amazon ECR (Docker Registry)       |
+|   513278912561.dkr.ecr.eu-north-1...      |
++-------------+-----------------------------+
+              |
+              | Pulled automatically by ASG
+              v
++--------------------------------------------------------------+
+|               AWS Auto Scaling Group (ASG)                   |
+|                     delivery-asg                             |
+|  - Maintains desired instance count                          |
+|  - Launches new EC2 on scale-out                             |
+|  - Replaces EC2 on Instance Refresh                          |
++-------------+------------------------------------------------+
+              | Launch Template
+              v
++----------------------------------------------------------+
+|           EC2 Launch Template + User Data               |
+|----------------------------------------------------------|
+|  User Data Script:                                       |
+|   - Install Docker, AWS CLI                              |
+|   - Fetch MLflow URI / Keys from SSM                     |
+|   - Login to ECR                                          |
+|   - Pull latest Docker image                              |
+|   - Run FastAPI container on port 8000                   |
++-------------+--------------------------------------------+
+              |
+              v
++-----------------------------+    +-----------------------------+
+|       EC2 Instance #1       |    |       EC2 Instance #2       |
+| - Docker: delivery-api      |    | - Docker: delivery-api      |
+| - FastAPI /predict /docs    |    | - FastAPI /predict /docs    |
++-------------+---------------+    +-------------+---------------+
+              |
+              | Registered Targets (Port 8000)
+              v
++-------------------------------------------+
+|     Application Load Balancer (ALB)       |
+|     - Routes Traffic                      |
+|     - Health Check: /docs                 |
++-------------+-----------------------------+
+              v
++----------------------+
+|      End Users       |
+|  Browsers / Postman  |
++----------------------+
+"""
+
+    st.code(ascii_diagram, language="text")
+    
+    
+def section_stress_test():
+
+    st.title("🔥 Stress Testing (Postman Load Test)")
+
+    # -------------------------
+    # WHY STRESS TEST WAS DONE
+    # -------------------------
+    st.markdown(
+"""
+<div style="
+background-color:#ffece8;
+padding:22px;
+border-radius:14px;
+border:1px solid #ffc4b8;
+box-shadow:0 2px 8px rgba(0,0,0,0.06);
+margin-top:16px;
+">
+
+<h3 style="color:#9b1f00; margin-bottom:10px;">🎯 Purpose of the Stress Test</h3>
+
+<p style="color:#222; line-height:1.55;">
+I performed a large-scale stress test to verify whether my 
+<b>AWS Auto Scaling Group (ASG)</b> was correctly configured to add 
+new EC2 instances under heavy traffic.  
+This was essential to ensure my FastAPI backend is <b>reliable, scalable, and production-ready</b>.
+</p>
+
+</div>
+""",
+        unsafe_allow_html=True,
+    )
+
+    # -------------------------
+    # HOW THE TEST WAS PERFORMED
+    # -------------------------
+    st.subheader("🧪 How I Performed the Stress Test")
+
+    st.write(
+        """
+        To generate real production-like traffic, I used **Postman Runner**.
+
+        **Load Setup (Postman):**
+        - Sent **10,000 requests** per Postman Runner  
+        - Opened **10 Postman windows in parallel**  
+        - Total effective traffic: **~100,000 API requests**  
+        - All requests hit the **Application Load Balancer → Target Group → ASG → EC2**
+
+        I specifically chose Postman because:
+        - It’s simple to simulate large volumes of API calls  
+        - It gives clear request success/failure metrics  
+        - Easy to run parallel windows for massive load generation  
+        """
+    )
+
+    # -------------------------
+    # RESULTS
+    # -------------------------
+    st.subheader("📈 What Happened During the Test")
+
+    st.write(
+        """
+        As the Postman load ramped up:
+
+        - The first EC2 instance’s **CPU spiked above 50%**
+        - This crossed the Auto Scaling threshold configured in ASG
+        - ASG automatically launched **a second EC2 instance**
+        - As load kept increasing, ASG launched **a third EC2 instance**
+        - Each new instance:
+            - Executed the User Data script  
+            - Pulled the latest Docker image  
+            - Started the FastAPI server  
+        - ALB routed traffic only after each new instance became **Healthy**
+
+        ✔ This confirmed that my auto-scaling setup works **exactly as designed**.
+        """
+    )
+
+    # -------------------------
+    # TARGET GROUP SCALING (1 → 2 → 3)
+    # -------------------------
+    st.subheader("📸 Auto Scaling Results (1 → 2 → 3 Instances)")
+
+    st.write(
+        """
+        Below are the screenshots from the **Target Group dashboard**, showing the real-time
+        scale-out behavior during the stress test.
+        """
+    )
+
+    st.image("testasg1.png", caption="🔹 Before Stress Test — 1 EC2 instance (minimum capacity)")
+    st.image("testasg2.png", caption="🔹 During Stress Test — 2 EC2 instances (scale-out triggered)")
+    st.image("testasg3.png", caption="🔹 High Load Peak — 3 EC2 instances (maximum configured capacity)")
+
+    # -------------------------
+    # CLOUDWATCH METRICS
+    # -------------------------
+    st.subheader("📊 Monitoring During Stress Test")
+
+    st.write(
+        """
+        CloudWatch metrics clearly showed the system response:
+
+        - CPU utilization increased sharply → triggered Auto Scaling  
+        - Request count spiked → confirmed Postman was generating real load  
+        """
+    )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.image(
+            "cpu_ut.png",
+            caption="🔹 CPU Utilization Across EC2 Instances (Spike → Scale Out Triggered)",
+     
+        )
+
+    with col2:
+        st.image(
+            "request.png",
+            caption="🔹 Incoming Request Count Increasing During Stress Test",
+
+        )
+
+    # -------------------------
+    # FINAL RESULT
+    # -------------------------
+    st.subheader("✅ Final Outcome")
+
+    st.write(
+        """
+        The stress test proved that:
+
+        - ✔ Auto Scaling triggers exactly at the configured CPU threshold  
+        - ✔ New EC2 instances automatically deploy the Docker container  
+        - ✔ ALB smoothly load-balances traffic between instances  
+        - ✔ No downtime occurred during the scale-out  
+        - ✔ The backend can handle real production traffic reliably  
+
+        **Conclusion:**  
+        My architecture is fully **production-ready**, **self-scaling**, and **resilient** under load.
+        """
+    )
+
 
 
 
 
 
 def section_tech():
+
     st.title("🧱 Tech Stack & Pipeline")
+
+    # ---------------------------
+    # High-level overview card
+    # ---------------------------
+    st.markdown(
+"""
+<div style="
+background-color:#eef3ff;
+padding:22px;
+border-radius:14px;
+border:1px solid #c8d9ff;
+box-shadow:0 2px 8px rgba(0,0,0,0.06);
+margin-top:16px;
+">
+
+<h3 style="color:#0a2d73; margin-bottom:10px;">🔧 Complete Technology Stack Used in This Project</h3>
+
+<p style="color:#222; line-height:1.55;">
+This project integrates <b>Machine Learning, FastAPI, Docker, AWS Auto Scaling, CI/CD, 
+Cloud monitoring, and DVC pipelines</b> to build a fully production-ready system.
+</p>
+
+</div>
+""",
+        unsafe_allow_html=True,
+    )
+
+    # ---------------------------
+    # Backend Tech Stack
+    # ---------------------------
+    st.subheader("⚙️ Backend & API Technologies")
+
+    st.write(
+        """
+        - **FastAPI** – High-performance asynchronous API framework  
+        - **Pydantic** – Input validation and schema enforcement  
+        - **Uvicorn** – ASGI server for FastAPI  
+        - **MLflow Model Registry** – Managing model versions  
+        - **Pandas / NumPy** – Data transformations  
+        - **Weighted Ensemble Model (CatBoost + LightGBM)**  
+        """
+    )
+
+    # ---------------------------
+    # Machine Learning
+    # ---------------------------
+    st.subheader("🤖 Machine Learning & Experimentation")
+
+    st.write(
+        """
+        - **LightGBM**, **CatBoost**, **Logistic Regression**, **SVM**, **KNN**, **Random Forest**  
+        - **Hyperparameter tuning**  
+        - **Preprocessing pipeline** stored and reused  
+        - **MLflow tracking** for experiments & model lineage  
+        """
+    )
+
+    # ---------------------------
+    # Deployment & DevOps
+    # ---------------------------
+    st.subheader("🚀 Deployment & DevOps")
+
+    st.write(
+        """
+        - **AWS EC2 Auto Scaling Group (ASG)**  
+        - **Application Load Balancer (ALB)**  
+        - **Launch Template + User Data** for automatic deployment  
+        - **Amazon ECR** – Docker image registry  
+        - **Docker** – Containerizing the API  
+        - **Instance Refresh** – Zero-downtime redeployment  
+        - **SSM Parameter Store** – Secure environment variables  
+        """
+    )
+
+    # ---------------------------
+    # Cloud Monitoring
+    # ---------------------------
+    st.subheader("📊 Monitoring & Observability")
+
+    st.write(
+        """
+        - **AWS CloudWatch Metrics** – CPU usage, request count  
+        - **CloudWatch Logs** – Application logs  
+        - **Target Group health checks** – Ensure API responsiveness  
+        """
+    )
+
+    # ---------------------------
+    # CI/CD & Automation
+    # ---------------------------
+    st.subheader("🔄 CI/CD Automation & Data Versioning")
+
+    st.write(
+        """
+        - **GitHub Actions** – Build & push Docker images to ECR  
+        - **DVC (Data Version Control)** – Reproducible ML pipeline  
+        - **YAML-based pipelines** – Training, evaluation, deployment steps  
+        - **Automated retraining + registry update**  
+        """
+    )
+
+    # ---------------------------
+    # Load Testing
+    # ---------------------------
+    st.subheader("🔥 Load & Stress Testing Tools")
+
+    st.write(
+        """
+        - **Postman Runner** – Sent 100k API requests  
+        - Verified auto-scaling behavior under load  
+        """
+    )
+
+    # ---------------------------
+    # Developer Tools
+    # ---------------------------
+    st.subheader("🛠 Developer Tools Used")
+
+    st.write(
+        """
+        - **VS Code** – Development  
+        - **Git & GitHub** – Version control  
+        - **Python Virtual Environments**  
+        - **Jupyter Notebook** for experimentation  
+        """
+    )
+
+def section_repos():
+
+    st.title("🔗 Project Repositories & Author")
+
+    st.write(
+        """
+        Below are the two main repositories for this project — one for the  
+        **production deployment** and one for the **experimentation phase**.
+        """
+    )
+
+        # ---- Card for Repos ----
+    st.markdown(
+    """
+    <div style="background-color:#f1f5ff;padding:22px;border-radius:14px;
+    border:1px solid #c5d4ff;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-top:12px;">
+
+    <h3 style="color:#0b2e72; margin-bottom:12px;">📦 Project Repositories</h3>
+
+    <ul style="color:#111; line-height:1.55; font-size:16px;">
+    <li>
+        <b>Production Repository:</b><br>
+        <a href="https://github.com/apoorvtechh/delivery_time_estimator" target="_blank">
+            github.com/apoorvtechh/delivery_time_estimator
+        </a>
+    </li>
+
+    <br>
+
+    <li>
+        <b>Experimentation Repository:</b><br>
+        <a href="https://github.com/apoorvtechh/Swiggy_project_Experimentation" target="_blank">
+            github.com/apoorvtechh/Swiggy_project_Experimentation
+        </a>
+    </li>
+    </ul>
+
+    </div>
+    """,
+        unsafe_allow_html=True,
+    )
+
+
+        # ---- Author Card ----
+    st.markdown(
+    """
+    <div style="background-color:#fff8e8;padding:22px;border-radius:14px;
+    border:1px solid #ffddb3;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-top:18px;">
+
+    <h3 style="color:#9b5300; margin-bottom:10px;">👨‍💻 Author</h3>
+
+    <p style="color:#222; font-size:16px; line-height:1.55;">
+    <b>Apoorv Gupta</b><br>
+    Email: <a href="mailto:apoorvtecgg@gmail.com">apoorvtecgg@gmail.com</a><br>
+    GitHub: <a href="https://github.com/apoorvtechh" target="_blank">github.com/apoorvtechh</a>
+    </p>
+
+    </div>
+    """,
+            unsafe_allow_html=True,
+        )
+
+
 
 
 # ============================================================
@@ -877,9 +1834,20 @@ elif section == "🎯 Hyperparameter Tuning":
 
 elif section == "🤖 Final Model & Metrics":
     section_final_model()
+    
+elif section == "🛰️ API Service (FastAPI)":
+    section_fastapi()
+
+elif section == "🌥️ AWS Deployment (Auto Scaling)":
+    section_aws_deploy()
 
 elif section == "🔮 DVC Pipeline, CI/CD Automation":
     section_predict()
-
+    
 elif section == "🧱 Tech Stack & Pipeline":
     section_tech()
+elif section == "🔥 Stress Testing (Postman)":
+    section_stress_test()
+elif section == "🔗 Project Repositories & Author":
+    section_repos()
+
