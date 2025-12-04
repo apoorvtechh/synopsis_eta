@@ -12,8 +12,9 @@ This document is the **official synopsis** of the **Delivery Time Estimator** pr
 - CI/CD with GitHub Actions  
 - Stress testing with 100k serial API requests  
 
-The project demonstrates a fully automated, scalable, and cloud-ready ML workflow.
+The project demonstrates a fully automated, scalable, and cloud-ready ML workflow.  
 
+**Working Link** https://apoorvtechh-synopsis-eta-main-6f3ijc.streamlit.app/
 ---
 
 ## 🔗 Project Repositories
