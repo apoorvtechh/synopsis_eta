@@ -1804,7 +1804,7 @@ def section_repos():
 
     <p style="color:#222; font-size:16px; line-height:1.55;">
     <b>Apoorv Gupta</b><br>
-    Email: <a href="mailto:apoorvtechh@gmail.com">apoorvtecgg@gmail.com</a><br>
+    Email: <a href="mailto:apoorvtechh@gmail.com">apoorvtechh@gmail.com</a><br>
     GitHub: <a href="https://github.com/apoorvtechh" target="_blank">github.com/apoorvtechh</a>
     </p>
 
