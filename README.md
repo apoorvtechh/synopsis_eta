@@ -30,7 +30,7 @@ Contains all data analysis, visualizations, ML experiments, model training noteb
 
 ## 👤 Author  
 **Apoorv Gupta**  
-📧 Email: **apoorvtecgg@gmail.com**  
+📧 Email: **apoorvtechh@gmail.com**  
 🐙 GitHub: **https://github.com/apoorvtechh**
 
 ---
